@@ -27,14 +27,14 @@ Start the server and request its machine code using `GET /api/machinecode`. Send
 | Topic | Basic information |
 | --- | --- |
 | **Product** | On-premise **document recognition** for Windows |
-| **Runtime** | Download the runtime zip from [Releases](https://github.com/identixia-IDV/ID-Document-Recognition-Windows/releases/latest) |
+| **Runtime** | Download the `runtime` Release from [Releases](https://github.com/identixia-IDV/ID-Document-Recognition-Windows/releases/tag/runtime) |
 | **Privacy** | Document images stay on your host — no Identixia cloud |
 
 ---
 
 ## <img src="https://api.iconify.design/lucide/package.svg?color=%230F766E" width="24" height="24" alt="" /> SDK installation
 
-Download [`documentrecognition-liveness-windows.zip`](https://github.com/identixia-IDV/ID-Document-Recognition-Liveness-Detection-Windows/releases/latest) from the [ID-Document-Recognition-Liveness-Detection-Windows Releases](https://github.com/identixia-IDV/ID-Document-Recognition-Liveness-Detection-Windows/releases/latest). Unzip it into `lib/cpu/`. The files should sit in that folder, not inside an extra directory.
+Download [`documentrecognition.rar`](https://github.com/identixia-IDV/ID-Document-Recognition-Windows/releases/tag/runtime) from this repository’s [Releases](https://github.com/identixia-IDV/ID-Document-Recognition-Windows/releases/tag/runtime). Extract it into `lib/cpu/`. The files should sit in that folder, not inside an extra directory.
 
 Unzip **directly** into `lib\cpu\`.
 
@@ -65,7 +65,9 @@ Email the machine code and the product you want to use to [contact@identixia.com
 
 ### <img src="https://img.shields.io/badge/-3-0F766E?style=for-the-badge" alt="" /> Activate / license
 
-Replace `YOUR_KEY` in the request below with the license key issued for this machine. The activation endpoint saves the key to the server’s `.env` file and attempts to initialize the SDK. For a local installation, you can also set `LICENSE=YOUR_KEY` in the repository’s `.env` file and restart the server.
+1. Email the machine code from the previous step, and the product name, to [contact@identixia.com](mailto:contact@identixia.com).
+2. Put the key you receive in `.env` at the repository root: `LICENSE=YOUR_KEY`.
+3. Restart the server, or send the key with the command below. Then continue with the next step.
 
 ```bash
 curl -s -X POST http://127.0.0.1:14101/api/activate -H "Content-Type: application/json" -d "{\"license\":\"YOUR_KEY\"}"
@@ -98,7 +100,7 @@ Process a document through the recognize / process endpoints after activation. S
 | --- | --- |
 | API port | **14101** |
 | Gradio demo port | **14201** |
-| Runtime download | [Releases](https://github.com/identixia-IDV/ID-Document-Recognition-Windows/releases/latest) |
+| Runtime download | [Releases](https://github.com/identixia-IDV/ID-Document-Recognition-Windows/releases/tag/runtime) |
 
 ---
 
